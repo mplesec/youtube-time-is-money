@@ -14,7 +14,8 @@
         padding: 20px 22px;
         box-sizing: border-box;
       }
-      h2 { margin: 0 0 16px; font-size: 20px; font-weight: 700; }
+      h2 { display: flex; align-items: center; gap: 10px; margin: 0 0 16px; font-size: 20px; font-weight: 700; }
+      h2 img { height: 26px; width: auto; display: block; }
       h2 .yt { color: var(--yt-red); }
       label { display: block; margin: 16px 0 6px; font-weight: 500; font-size: 13px; color: var(--muted); }
       input, select {
@@ -27,7 +28,7 @@
     </style>
   </head>
   <body>
-    <h2><span class="yt">YouTube</span> Time is Money</h2>
+    <h2><img src="logo.png" alt="" /><span><span class="yt">YouTube</span> Time is Money</span></h2>
     <label for="rate">How much you earn per hour</label>
     <input id="rate" type="number" min="0" step="0.5" />
     <label for="currency">Currency</label>

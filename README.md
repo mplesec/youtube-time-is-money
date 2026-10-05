@@ -1,3 +1,5 @@
+<img src="logo.png" alt="YouTube Time is Money logo" width="96" />
+
 # YouTube Time is Money
 
 A Chrome extension that makes YouTube's attention economy visible. It:
