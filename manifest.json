@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "YT Money — time is money",
+  "version": "1.0.0",
+  "description": "Shows what each YouTube video costs in your time, and blurs thumbnails until you hover.",
+  "permissions": ["storage"],
+  "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" },
+  "action": { "default_popup": "options.html", "default_title": "YT Money settings", "default_icon": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" } },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "css": ["content.css"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

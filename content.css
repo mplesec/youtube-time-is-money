@@ -1,0 +1,53 @@
+/* Blur + grayscale all video thumbnails; reveal original on hover. */
+ytd-thumbnail img,
+yt-thumbnail-view-model img,
+ytd-playlist-thumbnail img,
+ytd-playlist-video-thumbnail-renderer img,
+ytd-video-preview img,
+.ytp-videowall-still-image {
+  filter: blur(6px) grayscale(1) !important;
+  transition: filter 0.25s ease !important;
+}
+
+/* Descendant (not child) combinators + the card wrappers, so hovering
+   reveals the full static thumbnail. */
+ytd-thumbnail:hover img,
+a#thumbnail:hover img,
+yt-thumbnail-view-model:hover img,
+.yt-lockup-view-model:hover img,
+ytd-rich-item-renderer:hover img,
+ytd-video-renderer:hover img,
+ytd-compact-video-renderer:hover img,
+ytd-grid-video-renderer:hover img,
+ytd-playlist-thumbnail:hover img,
+ytd-playlist-video-thumbnail-renderer:hover img,
+.ytp-videowall-still:hover .ytp-videowall-still-image {
+  filter: none !important;
+}
+
+/* Kill YouTube's inline autoplay preview on hover — show the static
+   thumbnail only, never start playing the video. */
+ytd-video-preview,
+#video-preview,
+ytd-moving-thumbnail-renderer,
+yt-lockup-view-model .yt-core-image--loaded ~ video,
+ytd-thumbnail video {
+  display: none !important;
+}
+
+/* Cost pill — light red, sits just above YouTube's time pill (bottom-right). */
+.ytm-cost {
+  position: absolute;
+  right: 4px;
+  bottom: 28px;
+  z-index: 9999;
+  background: #ffb3b3;
+  color: #6b0000;
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 1;
+  padding: 6px 14px;
+  border-radius: 8px;
+  pointer-events: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
