@@ -3,9 +3,9 @@ const { chromium } = require("playwright");
 
 const svg = (s) => `
 <svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 128 128">
-  <rect x="1" y="1" width="126" height="126" fill="#606060"
-        stroke="#ff0000" stroke-width="2"/>
-  <polygon points="50,40 50,88 90,64" fill="#ff0000"/>
+  <rect width="128" height="128" rx="26" fill="#ff0000"/>
+  <text x="64" y="94" text-anchor="middle" font-family="Roboto, Arial, sans-serif"
+        font-size="92" font-weight="700" fill="#fff">$</text>
 </svg>`;
 
 (async () => {
