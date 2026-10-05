@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "YT Money — time is money",
+  "name": "YouTube Time is Money",
   "version": "1.0.0",
   "description": "Shows what each YouTube video costs in your time, and blurs thumbnails until you hover.",
   "permissions": ["storage"],
