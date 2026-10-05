@@ -23,9 +23,10 @@ const TIME_SEL = [
   ".badge-shape-wrap .badge-shape",
   "badge-shape", // new lockup layout (watch page / recs): <badge-shape class="ytBadgeShapeHost">
   ".ytp-videowall-still-info-duration", // end-of-video recommendation wall
+  ".ytp-autonav-timestamp", // autoplay "up next" end card
 ].join(",");
 
-const CONT_SEL = "ytd-thumbnail, yt-thumbnail-view-model, a#thumbnail, #thumbnail, .ytp-videowall-still";
+const CONT_SEL = "ytd-thumbnail, yt-thumbnail-view-model, a#thumbnail, #thumbnail, .ytp-videowall-still, .ytp-autonav-endscreen-upnext-thumbnail";
 
 function scan() {
   document.querySelectorAll(TIME_SEL).forEach((el) => {
