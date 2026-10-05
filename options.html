@@ -24,13 +24,42 @@
         border: 1px solid #3f3f3f; border-radius: 8px; outline: none;
       }
       input:focus, select:focus { border-color: var(--yt-red); }
+
+      /* Custom number stepper: [ − | input | + ] */
+      .stepper { display: flex; align-items: stretch; gap: 8px; }
+      .stepper input {
+        flex: 1; text-align: center; -moz-appearance: textfield;
+      }
+      .stepper input::-webkit-inner-spin-button,
+      .stepper input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+      .stepper button {
+        width: 44px; flex: none; padding: 0; cursor: pointer;
+        background: var(--surface); color: var(--text);
+        border: 1px solid #3f3f3f; border-radius: 8px;
+        font-size: 22px; font-weight: 500; line-height: 1;
+        display: flex; align-items: center; justify-content: center;
+        transition: background 0.15s, border-color 0.15s;
+      }
+      .stepper button:hover { background: #3f3f3f; border-color: var(--yt-red); }
+      .stepper button:active { background: var(--yt-red); border-color: var(--yt-red); }
+
+      /* Custom select caret, set in from the right edge */
+      select {
+        -webkit-appearance: none; appearance: none; padding-right: 40px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f1f1f1' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+        background-repeat: no-repeat; background-position: right 14px center;
+      }
       #saved { color: var(--yt-red); height: 18px; margin-top: 14px; font-size: 13px; font-weight: 500; }
     </style>
   </head>
   <body>
     <h2><img src="logo.png" alt="" /><span><span class="yt">YouTube</span> Time is Money</span></h2>
     <label for="rate">How much you earn per hour</label>
-    <input id="rate" type="number" min="0" step="0.5" />
+    <div class="stepper">
+      <button type="button" id="dec" aria-label="Decrease">−</button>
+      <input id="rate" type="number" min="0" step="1" />
+      <button type="button" id="inc" aria-label="Increase">+</button>
+    </div>
     <label for="currency">Currency</label>
     <select id="currency">
       <option value="EUR">Euro (€)</option>

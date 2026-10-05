@@ -16,3 +16,10 @@ function save() {
 
 rate.addEventListener("change", save);
 currency.addEventListener("change", save);
+
+function step(delta) {
+  rate.value = Math.max(0, (+rate.value || 0) + delta);
+  save();
+}
+document.getElementById("inc").addEventListener("click", () => step(1));
+document.getElementById("dec").addEventListener("click", () => step(-1));
