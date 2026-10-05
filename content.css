@@ -4,8 +4,7 @@ yt-thumbnail-view-model img,
 ytd-playlist-thumbnail img,
 ytd-playlist-video-thumbnail-renderer img,
 ytd-video-preview img,
-.ytp-videowall-still-image,
-.ytp-autonav-endscreen-upnext-thumbnail {
+.ytPageHeaderViewModelHeadlineImage img {
   filter: blur(6px) grayscale(1) !important;
   transition: filter 0.25s ease !important;
 }
@@ -22,8 +21,7 @@ ytd-compact-video-renderer:hover img,
 ytd-grid-video-renderer:hover img,
 ytd-playlist-thumbnail:hover img,
 ytd-playlist-video-thumbnail-renderer:hover img,
-.ytp-videowall-still:hover .ytp-videowall-still-image,
-.ytp-autonav-endscreen-upnext-container:hover .ytp-autonav-endscreen-upnext-thumbnail {
+.ytPageHeaderViewModelHeadlineImage:hover img {
   filter: none !important;
 }
 
@@ -54,12 +52,10 @@ ytd-thumbnail video {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
-/* Smaller pill on the compact end-of-video stills. */
-.ytp-videowall-still .ytm-cost,
-.ytp-autonav-endscreen-upnext-thumbnail .ytm-cost {
-  font-size: 14px;
-  bottom: 6px;
-  right: 6px;
-  padding: 3px 7px;
-  border-radius: 6px;
+/* Hide end-of-video recommendations shown inside the player (videowall grid,
+   autoplay "up next" card, and creator end cards). */
+.html5-endscreen,
+.ytp-ce-element,
+.ytp-autonav-endscreen-upnext-container {
+  display: none !important;
 }
