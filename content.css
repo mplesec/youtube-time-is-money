@@ -52,6 +52,15 @@ ytd-thumbnail video {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
+/* Watch-page playlist / Watch Later side panel: thumbnails are tiny, so
+   shrink the pill to fit. */
+ytd-playlist-panel-video-renderer .ytm-cost {
+  font-size: 1.5rem;
+  padding: 3px 7px;
+  border-radius: 5px;
+  bottom: 22px;
+}
+
 /* Hide end-of-video recommendations shown inside the player (videowall grid,
    autoplay "up next" card, and creator end cards). */
 .html5-endscreen,
